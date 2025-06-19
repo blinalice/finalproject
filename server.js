@@ -9,10 +9,8 @@ const port = 3000;
 app.use(cors());
 app.use(express.json());
 
-// Раздаём папку public
 app.use(express.static(path.join(__dirname, 'public')));
 
-// --- Словарь ключевых слов ---
 const keywords = {
   nodejs: [
     "https://nodejs.org",
@@ -28,7 +26,6 @@ const keywords = {
   ]
 };
 
-// --- Эндпоинт: поиск по ключевому слову ---
 app.post('/search', (req, res) => {
   const keyword = req.body.keyword?.toLowerCase();
   if (keywords[keyword]) {
@@ -38,7 +35,6 @@ app.post('/search', (req, res) => {
   }
 });
 
-// --- Функция загрузки с поддержкой редиректов ---
 function fetchWithRedirects(url, callback, depth = 0) {
   if (depth > 5) {
     return callback(new Error('Слишком много перенаправлений'));
@@ -73,7 +69,6 @@ function fetchWithRedirects(url, callback, depth = 0) {
   }).on('error', err => callback(err));
 }
 
-// --- Эндпоинт: загрузка контента по URL ---
 app.post('/download', (req, res) => {
   const url = req.body.url;
 
@@ -95,12 +90,10 @@ app.post('/download', (req, res) => {
   });
 });
 
-// --- SPA fallback: отдаём index.html ---
 app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-// --- Запуск сервера ---
 app.listen(port, () => {
   console.log(`Сервер запущен: http://localhost:${port}`);
 });
