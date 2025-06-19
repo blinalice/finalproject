@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTTP Клиент</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>HTTP Клиент для загрузки контента</h1>
+
+    <!-- Ввод ключевого слова -->
+    <div>
+        <label for="keyword">Введите ключевое слово:</label>
+        <input type="text" id="keyword" placeholder="например, nodejs">
+        <button id="searchBtn">Поиск</button>
+    </div>
+
+    <!-- Список URL -->
+    <div id="urls-list" style="display: none; margin-top: 20px;">
+        <h2>Список URL</h2>
+        <ul id="urlList"></ul>
+    </div>
+
+    <!-- Статус загрузки -->
+    <div id="download-status" style="display: none; margin-top: 20px;">
+        <h2>Статус загрузки</h2>
+        <p id="status"></p>
+        <p id="progress"></p>
+    </div>
+
+    <!-- Отображение загруженного контента -->
+    <div id="content" style="display: none; margin-top: 20px;">
+        <h2>Загруженный контент</h2>
+        <pre id="contentView" style="white-space: pre-wrap; background: #f0f0f0; padding: 10px;"></pre>
+    </div>
+
+    <!-- Список сохранённых ранее -->
+    <div id="saved-content" style="margin-top: 40px;">
+        <h2>Загруженное ранее (оффлайн)</h2>
+        <select id="savedList">
+            <option value="">Выбери сохранённый URL</option>
+        </select>
+        <pre id="savedView" style="white-space: pre-wrap; background: #f9f9f9; padding: 10px; margin-top: 10px;"></pre>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+

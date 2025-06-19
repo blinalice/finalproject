@@ -1,0 +1,6 @@
+{
+  "nodejs": ["https://nodejs.org", "https://www.digitalocean.com/community/tutorials/what-is-node-js"],
+  "javascript": ["https://developer.mozilla.org/en-US/docs/Web/JavaScript", "https://www.javascript.info/"],
+  "python": ["https://www.python.org", "https://docs.python.org/3/"]
+}
+
